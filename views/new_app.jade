@@ -1,0 +1,28 @@
+extends layout
+
+block title
+	title NewApp
+
+block content
+	a(href='/') 应用列表
+
+	- if (errors != null)
+		div.errormsg
+			p The following erros occured:
+			ul
+				each error in errors
+					li= error.msg
+					
+		
+	form(method="post",enctype="multipart/form-data")
+		div
+			div
+				div: span.lavel 上传 apk
+				input(type="file", name="file")
+
+			div
+				input(type="submit", name="Submit")
+		
+
+			
+	
